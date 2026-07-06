@@ -2,14 +2,17 @@ package br.com.fiap.api_petshop.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 
 @Entity
 public class Animal {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column ( name = "nome_cliente_char_70", length = 100, columnDefinition = "char(70)", nullable = false)
+
+    @Column(name = "nome", length = 100, nullable = false)
     private String nome;
 
     public Long getId() {

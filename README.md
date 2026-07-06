@@ -51,5 +51,8 @@ Antes de conectar no DBeaver, certifique-se de que:
 ### Login 
 
 ````
-USER=root_pwd
-PASSWORD=my_pwd
+USER=root
+PASSWORD=root_pwd
+````
+
+> Estas são as credenciais do usuário `root` (as mesmas usadas pela API em `application.properties`). Em produção, defina-as via variáveis de ambiente `DB_USERNAME` / `DB_PASSWORD` em vez de deixá-las no código.
