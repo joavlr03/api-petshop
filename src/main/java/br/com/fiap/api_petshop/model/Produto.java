@@ -3,6 +3,8 @@ package br.com.fiap.api_petshop.model;
 import java.math.BigDecimal;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -10,10 +12,10 @@ import jakarta.persistence.Table;
 @Table(name = "produtos")
 public class Produto {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private BigDecimal valor;
-
 
     public Produto(Long id, String nome, BigDecimal valor) {
         this.id = id;
@@ -23,7 +25,6 @@ public class Produto {
 
     public Produto() {
     }
-
 
     public Long getId() {
         return id;
@@ -49,7 +50,4 @@ public class Produto {
         this.valor = valor;
     }
 
-
-
-    
 }
