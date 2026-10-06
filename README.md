@@ -18,6 +18,7 @@ Sem o container ativo, a API não consegue se conectar ao banco de dados, o que 
 
 Antes de iniciar a aplicação, execute o container do MySQL com o seguinte comando:
 
+## MySQL
 ```bash
 docker run -d --name mysql --rm \
 -e MYSQL_ROOT_PASSWORD=root_pwd \
@@ -26,6 +27,16 @@ docker run -d --name mysql --rm \
 -p 3306:3306 \
 mysql
 ````
+## SQL Server
+docker run -d \
+    --name sqlserver \
+    --rm \
+    -e MSSQL_SA_PASSWORD=1q2w3e4R@ \
+    -e "ACCEPT_EULA=Y" \
+    -p 1433:1433 \
+    mcr.microsoft.com/mssql/server:latest 
+
+    
 #☕ Maven (Build da aplicação)
 
 O Maven é responsável por compilar, gerenciar dependências e executar a aplicação Spring Boot.
@@ -38,6 +49,11 @@ mvn clean install
 mvn spring-boot:run
 ````
 
+## No Powershell
+````
+.\mvnw spring-boot:run
+````
+
 # 🗄️ Conectando ao Banco de Dados no DBeaver
 
 ## ⚠️ Pré-requisito
@@ -45,14 +61,14 @@ mvn spring-boot:run
 Antes de conectar no DBeaver, certifique-se de que:
 
 - O Docker está em execução
-- O container MySQL está rodando
-- A porta `3306` está exposta corretamente
+- O container SQL Server está rodando
+- A porta `1433` está exposta corretamente
 
 ### Login 
 
 ````
-USER=root
-PASSWORD=root_pwd
+USER=sa
+PASSWORD=1q2w3e4R@
 ````
 
 
