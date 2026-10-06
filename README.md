@@ -37,7 +37,7 @@ docker run -d \
     mcr.microsoft.com/mssql/server:latest 
 
     
-#☕ Maven (Build da aplicação)
+# ☕ Maven (Build da aplicação)
 
 O Maven é responsável por compilar, gerenciar dependências e executar a aplicação Spring Boot.
 
