@@ -8,14 +8,14 @@ import br.com.fiap.api_petshop.dto.ProdutoRequest;
 import br.com.fiap.api_petshop.dto.ProdutoResponse;
 import br.com.fiap.api_petshop.exception.ResourceNotFoundException;
 import br.com.fiap.api_petshop.model.Produto;
-import br.com.fiap.api_petshop.repository.ServicoRepository;
+import br.com.fiap.api_petshop.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
 
-    private final ServicoRepository repository;
+    private final ProdutoRepository repository;
 
-    public ProdutoService(ServicoRepository repository) {
+    public ProdutoService(ProdutoRepository repository) {
         this.repository = repository;
     }
 
